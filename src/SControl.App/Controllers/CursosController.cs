@@ -95,7 +95,7 @@ namespace SControl.App.Controllers
 
         [ClaimsAuthorize("Curso", "Editar")]
         [Route("editar-curso/{id:guid}")]
-        [HttpPost]
+        [HttpPut]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(Guid id, CursoViewModel cursoViewModel)
         {
@@ -127,7 +127,7 @@ namespace SControl.App.Controllers
 
         [ClaimsAuthorize("Curso", "Excluir")]
         [Route("excluir-curso/{id:guid}")]
-        [HttpPost, ActionName("Delete")]
+        [HttpDelete, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
